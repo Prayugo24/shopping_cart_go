@@ -27,7 +27,6 @@ func (status *V1TampilProdukController) TampilProduk (c *gin.Context){
 	db := c.MustGet("db").(*gorm.DB)
 	ProdukDb, _ := db.Table("tb_produks").Rows()
 	defer ProdukDb.Close()
-
 	resultTampilProduk := ResponseTampilProduk{}
     result := []ResponseTampilProduk{}
     for ProdukDb.Next() {
